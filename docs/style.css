@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Major+Mono+Display&family=Nunito+Sans:ital,wght@0,200;0,400;1,200;1,400&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&family=Quicksand&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Rubik:wght@400;500&family=Space+Mono&family=Work+Sans:ital,wght@0,100;0,400;0,600;1,100;1,400;1,600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0
+}
+body {
+    background: #16262cff;
+}
+
+header {
+    background: rgb(23, 26, 31);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Rubik';
+    color: rgb(226, 139, 223);
+    min-width: 800px;
+}
+
+header .container {
+    width: 90%;
+}
+
+.logo {
+    /* background-image: url("https://cdn.discordapp.com/avatars/265144290240495617/caf8d14e3e82cf096d91980dce17b998.webp"); */
+    /* aspect-ratio: 1; */
+    /* background-size: cover; */
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    height: 50px;
+    float: left;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 5vw;
+    padding-top: 15px;
+
+    position: relative;
+}
+
+nav a, .logo a {
+    color: rgb(226, 139, 223);
+    text-decoration: none;
+    transition: 0.2 ease-in-out;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: rgb(226, 139, 223);
+    top: 0;
+    width: 0%;
+    border-radius: 5px;
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::after {
+    width: 100%
+}
