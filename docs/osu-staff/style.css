@@ -11,11 +11,13 @@ body {
 header {
     background: rgb(23, 26, 31);
     width: 100%;
+    position: fixed;
     display: flex;
     justify-content: center;
     font-family: 'Rubik';
     color: rgb(226, 139, 223);
     min-width: 800px;
+    margin-top: -75px
 }
 
 header .container {
@@ -51,7 +53,6 @@ nav li {
     display: inline-block;
     margin-left: 5vw;
     padding-top: 15px;
-
     position: relative;
 }
 
@@ -79,14 +80,28 @@ nav a:hover::after {
 
 .wrapper section {
     width: 70%;
-    font-size: 18px;
+    font-size: 24px;
     color: #fff;
     font-family: 'Nunito';
     /* box-shadow: 0 0 3px #000; */
+    max-width: 900px;
 }
 
 .wrapper {
-    margin-top: 25px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 75px
+}
+
+.section-directory {
+    position: absolute;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    right: 20;
+    top: 70;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Balsamiq Sans';
 }
