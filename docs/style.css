@@ -76,3 +76,17 @@ nav a::after {
 nav a:hover::after {
     width: 100%
 }
+
+.wrapper section {
+    width: 70%;
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Nunito';
+    /* box-shadow: 0 0 3px #000; */
+}
+
+.wrapper {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
