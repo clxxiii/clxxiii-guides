@@ -2,7 +2,8 @@
 
 * {
     padding: 0;
-    margin: 0
+    margin: 0;
+    scroll-behavior: smooth;
 }
 body {
     background: #16262cff;
@@ -17,7 +18,8 @@ header {
     font-family: 'Rubik';
     color: rgb(226, 139, 223);
     min-width: 800px;
-    margin-top: -75px
+    margin-top: -75px;
+    z-index: 1;
 }
 
 header .container {
@@ -92,16 +94,38 @@ nav a:hover::after {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 30px;
     margin-top: 75px
 }
 
 .section-directory {
     position: absolute;
-    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px;
     background-color: rgba(0, 0, 0, 0.5);
     right: 20;
     top: 70;
     border-radius: 10px;
     color: white;
-    font-family: 'Balsamiq Sans';
+    font-family: 'Work Sans';
+}
+
+.section-directory a {
+    color: white;
+    text-decoration: none;
+}
+
+.section-directory a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 250ms ease-in-out;
+}
+
+.section-directory a:hover::after {
+    width: 100%;
 }
