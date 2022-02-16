@@ -1,0 +1,209 @@
+<head>
+    <title>CLXXIII's Tourney Wiki</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../markdown.css" />
+    <link rel="icon"
+        href="../static/icon.png" />
+</head>
+
+<body onload="onLoad()">
+    <header>
+        <div class="container">
+            <div class="logo"><a href="../">osu!Staff Docs</a></div>
+            <nav>
+                <ul>
+                    <li><a href="../intro">INTRODUCTION</a></li>
+                    <li><a href="../referee">REFEREEING</a></li>
+                    <li><a href="../streaming">STREAMING</a></li>
+                    <li><a href="../mappooling">MAPPOOLING</a></li>
+                    <li><a href="../hosting">HOSTING</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="bg"></div>
+    <div class="wrapper">
+        <div class="content">
+            <h1 id="web-title"></h1>
+            <div>
+                <h2>This page is a work in progress</h2>
+                <img class="hardhat" src="../static/hardhat.png">
+            </div>
+            <section id="Introduction">
+                <h2>Introduction</h2>
+                <p>
+                    While your job as a referee may not be immediately obvious, your
+                    job as a referee is crucial to the tournament scene. Which is what 
+                    makes it the perfect role for your first time as staff. For the purposes
+                    of keeping a complete guide, I'll be going over everything from the
+                    software to use, to refereeing without a ref sheet, to a breakdown
+                    of what I think should be the role of the ref in a behavioral situation.
+                </p>
+            </section>
+            <section id="IRC Clients">
+                <h2>IRC Clients</h2>
+                <p>
+                    When it comes to refereeing, you will need some type of software to actually
+                    interract with chat. One option is refereeing from in game, but it's clunky,
+                    unprofessional, and there are many tournaments that don't allow that in the 
+                    first place.
+                    <br>
+                    <br><b>Here are my top three choices for IRC Clients:</b>
+                    <p>
+                        <h3><a href="https://osu.ppy.sh/community/forums/topics/879262">chat4osu!</a></h3>
+                        <img src="../static/wiki images/chat4osu.png">
+                    </p>
+                    <p>
+                        If you want to have easy access to osu! chat and ref casually on the side,
+                        chat4osu! is the most well-suited towards people that just want a simple setup.
+                        It has support for hotkeys, custom notifications, and the ability to visualize 
+                        the lobby using a side menu.
+                        <br><br><b>Unfortunately, there's no MacOS release as of now.</b>
+                    </p>
+                    <p>
+                        <h3><a href="https://osu.ppy.sh/community/forums/topics/730734">Script chan</a></h3>
+                        <img src="../static/wiki images/scriptchan.png">
+                    </p>
+                    <p>
+                        Script chan is the ultimate referee tool. It is completely overkill
+                        and I love it. It's got the ability to manage and create teams, manage mappools,
+                        use discord webhooks to post match results, automatic score keeping and posting,
+                        almost anything you could need in a client you have with Script chan (except for hotkeys).
+                        <br><br><b>This client only works on windows.</b>
+                    </p>
+                    <p>
+                        <h3><a href="https://kiwiirc.com/nextclient/">KiwiIRC</a></h3>
+                        <img src="../static/wiki images/kiwiIRC.png">
+                    </p>
+                    <p>
+                        KiwiIRC is by far the most compatible client you can get. It's all hosted on the web,
+                        but it has virtually no features. It wasn't made for osu in the first place. However,
+                        if you need a client in a pinch, or have an operating system that doesn't support other
+                        clients, KiwiIRC is the best bet.
+                    </p>
+                    <h3>Which does CLXXIII use?</h3>
+                    <p>
+                        I rarely use KiwiIRC, but I have in the past when I needed to from a different computer
+                        where I didn't have my normal software installed. If it's a 1v1 tournament, or a smaller
+                        tournament I will use chat4osu. If it's a larger tournament, or one that I've already set 
+                        up in Script chan, I will use both chat4osu for chat, and Script chan for the scorekeeping
+                        features.
+                    </p>
+                </p>
+            </section>
+            <section id="Commands">
+                <h2>Commands</h2>
+                <p>
+                    When you're using an IRC client, you can't interact with a multiplayer lobby like you are used
+                    to. That's where the <span class="code">!mp</span> commands come in. For nearly every action you
+                    can make in a multi lobby, you can make using <span class="code">!mp</span> commands. Including 
+                    some things you can't do regularly.
+                </p>
+                <p>
+                    <h4>Here's a list of every <span class="code">!mp</span> command you can use:</h4>
+                    <sub>You can get access to this list using <span class="code">!mp help</span> in a multi,
+                    or a DM with bancho.</sub>
+                </p>
+                <ul class="code" style="font-size: 50%">
+                    <li><h3>!mp lock</h3>Prevents players from moving between slots</li>
+                    <li><h3>!mp unlock</h4>Allows players to move between slots</li>
+                    <li><h3>!mp make [room-name]</h4>Makes a multiplayer lobby</li> 
+                    <li><h3>!mp makeprivate [room-name]</h4>Makes a multiplayer lobby, only the players in the lobby can see the MP link</li> 
+                    <li><h3>!mp size [size]</h4>Changes the number of open slots</li> 
+                    <li><h3>!mp set [teammode] [scoremode] [size]</h4>Sets lobby properties</li> 
+                    <li><h3>!mp move [username] [slot]</h4>Moves a player to a different slot</li> 
+                    <li><h3>!mp invite [username]</h4>Invites a player to the lobby</li> 
+                    <li><h3>!mp host [username]</h4>Gives a player the host</li> 
+                    <li><h3>!mp clearhost</h4>Clears the host from the lobby </li> 
+                    <li><h3>!mp settings</h4>Prints information about the lobby</li> 
+                    <li><h3>!mp kick [username]</h4>Kicks a player from the lobby</li> 
+                    <li><h3>!mp ban [username]</h4>Bans a player from the lobby</li> 
+                    <li><h3>!mp team [username] [team]</h4>Sets the team of a player</li> 
+                    <li><h3>!mp map [map-id] [gamemode]</h4>Changes the map of the lobby</li> 
+                    <li><h3>!mp mods [mods]</h4>Changes the mods active in the lobby</li> 
+                    <li><h3>!mp timer [seconds]</h4>Sets a timer</li> 
+                    <li><h3>!mp start [seconds]</h4>Starts the game</li> 
+                    <li><h3>!mp abort</h4>Stops the current game from playing</li> 
+                    <li><h3>!mp aborttimer</h4>Stops the current timer</li> 
+                    <li><h3>!mp password [password]</h4>Changes the password of the lobby</li> 
+                    <li><h3>!mp addref [username], , ...</h4>Adds users able to use !mp commands</li> 
+                    <li><h3>!mp removeref [username], , ...</h4>Removes users able to use !mp commands</li> 
+                    <li><h3>!mp listrefs</h4>Lists all referees</li> 
+                    <li><h3>!mp name [room-name]</h4>Changes the name of the lobby</li> 
+                </ul>
+                <br>
+                <section id="Variables">
+                <h2>Variables</h2>
+                <ul class="size" style="--i: 0.75">
+                    <li><span class=code>[room-name]</span><p>The name of the multi room</p></li>
+                    <li><span class=code>[username]</span><p> A player, can be their name, 
+                        <span class=code>clxxiii</span>, or their ID, <span class=code>#10962678</span></p></li>
+                    <li><span class=code>[size]</span><p>The number of slots, from the top</p></li>
+                    <li><span class=code>[teammode]</span>
+                        <ul>
+                            <li><b class="code">0</b> HeadToHead</li>
+                            <li><b class="code">1</b> TagCoop</li>
+                            <li><b class="code">2</b> TeamVS</li>
+                            <li><b class="code">3</b> TeamTagVs</li>
+                        </ul>
+                    </li>
+                    <li><span class=code>[scoremode]</span> 
+                        <ul>
+                        <li><b class="code">0</b> Score</li>
+                        <li><b class="code">1</b> Accuracy</li>
+                        <li><b class="code">2</b> Combo</li>
+                        <li><b class="code">3</b> ScoreV2</li>
+                        </ul>
+                    </li>
+                    <li><span class=code>[team]</span><p>Red or Blue</p></li>
+                    <li><span class=code>[map-id]</span><p>The slot id, from 1-16</p></li>
+                    <li><span class=code>[gamemode]</span> 
+                        <ul>
+                        <li><b class="code">0</b> Standard</li>
+                        <li><b class="code">1</b> Taiko</li>
+                        <li><b class="code">2</b> Catch</li>
+                        <li><b class="code">3</b> Mania</li>
+                        </ul>
+                    </li>
+                    <li><span class=code>[mods]</span><p>A string of mods to be enable
+                        <br> EX: <span class="code">!mp mods NF</span>, <span class="code">!mp mods HD NF</span>, <span class="code">!mp mods Freemod</span>
+                    </p></li>
+                    <li><span class=code>[seconds]</span><p>Number of seconds before the timer ends</p></li>
+                    <li><span class=code>[password]</span><p>Password to enter the lobby (none if left blank)</p></li>
+                </ul>
+                </section>
+            </section>
+            <div id="Running Matches">
+                <h2>Running Matches</h2>
+                Now that you know all of the commands, it's time to set up a lobby:
+                <br><span class="size" style="--i: 0.5">Remember to remind your players about the upcoming match at least 15 minutes in advance!</span>
+                <div class="code-explain size" style="--i: 0.75">
+                    <ul class="code">
+                        <li>!mp make [acronym]: (Team1) vs (Team2)</li>
+                        <li>!mp set [teammode] [scoremode] [size]</li>
+                        <li>!mp mods NF</li>
+                        <li>!mp map [map-id-of-NM1]</li>
+                    </ul>
+                    <ul class="code-explain">
+                        <li>Make the lobby</li>
+                        <li>Set the settings</li>
+                        <li>Change default to NF</li>
+                        <li>Change map to NM1 <sub>(this is so it won't default to the host's map)</sub></li>
+                    </ul>
+                </div>
+                The rest of the setup will change depending on what you're running
+                <section id="Running a Qualifier Lobby">
+                    
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="section-directory-container">
+        <div class="section-directory">
+            <h2>Sections:</h2>
+        </div>
+    </div>
+    <script src="../index.js"></script>
+    <script src="../static/parallax.js"></script>
+    <script src="../createDirectory.js"></script>
+</body>
