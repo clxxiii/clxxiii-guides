@@ -18,28 +18,27 @@
 .content p {
 	text-indent: 5%;
 	text-align: left;
-	margin-bottom: 20px;
 }
 
 .section-directory h2 {
 	text-shadow: none;
 }
 
-.content h1 {
+.content #web-title {
 	font-size: 400%;
 	text-transform: uppercase;
 	font-family: "Montserrat";
 	text-shadow: 0 0 20px var(--heading-glow);
 }
 
-.content h2 {
+.content h1 {
 	color: white;
 	text-shadow: 0 0 10px var(--heading-glow);
 	font-size: 175%;
 	margin-bottom: 10px;
 }
 
-.content h3 {
+.content h2 {
 	font-size: 150%;
 }
 
@@ -87,10 +86,42 @@ div.code-explain {
 	justify-content: center;
 }
 
-ul.code-explain {
-	font-size: 90%;
-	margin-left: 0 !important;
-	vertical-align: middle;
-	padding: 20px 3px;
-	list-style-type: none;
+ul {
+	width: 90%;
+}
+
+table,
+th,
+td {
+	color: white;
+	text-align: center;
+}
+
+th {
+	font-size: 30px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+td {
+	font-size: 18px;
+	padding: 5px 5px 5px 0;
+	border-bottom: 1px solid rgba(255, 255, 255);
+}
+
+table {
+	padding: 10px;
+	border-radius: 10px;
+	border-spacing: 0 10px;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+	background: linear-gradient(
+		135deg,
+		rgba(19, 212, 213, 0.5) 0%,
+		rgba(23, 214, 166, 0.5) 100%
+	);
+	width: 90%;
+}
+
+table code {
+	background-color: rgba(0, 0, 0, 0.3);
 }

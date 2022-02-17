@@ -4,6 +4,24 @@
     <link rel="stylesheet" href="../markdown.css" />
     <link rel="icon"
         href="../static/icon.png" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+	<script>
+		let path = window.location.pathname,
+			pathName = path.split("/");
+		console.log(pathName);
+		var converter = new showdown.Converter({ tables: true }),
+			text = fetch("/osu-staff/markdown/" + pathName[2] + ".md").then(
+				(response) => {
+					response.text().then((response) => {
+						html = converter.makeHtml(response);
+
+						let content = document.getElementById("content");
+						content.innerHTML = html;
+					});
+				}
+			);
+		console.log(converter.getOptions());
+	</script>
 </head>
 
 <body onload="onLoad()">
@@ -23,7 +41,7 @@
     </header>
     <div class="bg"></div>
     <div class="wrapper">
-        <div class="content">
+        <div id="content" class="content">
             <h1 id="web-title"></h1>
             <div>
                 <h2>This page is a work in progress</h2>
@@ -106,30 +124,30 @@
                 </p>
                 <ul class="code" style="font-size: 50%">
                     <li><h3>!mp lock</h3>Prevents players from moving between slots</li>
-                    <li><h3>!mp unlock</h4>Allows players to move between slots</li>
-                    <li><h3>!mp make [room-name]</h4>Makes a multiplayer lobby</li> 
-                    <li><h3>!mp makeprivate [room-name]</h4>Makes a multiplayer lobby, only the players in the lobby can see the MP link</li> 
-                    <li><h3>!mp size [size]</h4>Changes the number of open slots</li> 
-                    <li><h3>!mp set [teammode] [scoremode] [size]</h4>Sets lobby properties</li> 
-                    <li><h3>!mp move [username] [slot]</h4>Moves a player to a different slot</li> 
-                    <li><h3>!mp invite [username]</h4>Invites a player to the lobby</li> 
-                    <li><h3>!mp host [username]</h4>Gives a player the host</li> 
-                    <li><h3>!mp clearhost</h4>Clears the host from the lobby </li> 
-                    <li><h3>!mp settings</h4>Prints information about the lobby</li> 
-                    <li><h3>!mp kick [username]</h4>Kicks a player from the lobby</li> 
-                    <li><h3>!mp ban [username]</h4>Bans a player from the lobby</li> 
-                    <li><h3>!mp team [username] [team]</h4>Sets the team of a player</li> 
-                    <li><h3>!mp map [map-id] [gamemode]</h4>Changes the map of the lobby</li> 
-                    <li><h3>!mp mods [mods]</h4>Changes the mods active in the lobby</li> 
-                    <li><h3>!mp timer [seconds]</h4>Sets a timer</li> 
-                    <li><h3>!mp start [seconds]</h4>Starts the game</li> 
-                    <li><h3>!mp abort</h4>Stops the current game from playing</li> 
-                    <li><h3>!mp aborttimer</h4>Stops the current timer</li> 
-                    <li><h3>!mp password [password]</h4>Changes the password of the lobby</li> 
-                    <li><h3>!mp addref [username], , ...</h4>Adds users able to use !mp commands</li> 
-                    <li><h3>!mp removeref [username], , ...</h4>Removes users able to use !mp commands</li> 
-                    <li><h3>!mp listrefs</h4>Lists all referees</li> 
-                    <li><h3>!mp name [room-name]</h4>Changes the name of the lobby</li> 
+                    <li><h3>!mp unlock</h3>Allows players to move between slots</li>
+                    <li><h3>!mp make [room-name]</h3>Makes a multiplayer lobby</li> 
+                    <li><h3>!mp makeprivate [room-name]</h3>Makes a multiplayer lobby, only the players in the lobby can see the MP link</li> 
+                    <li><h3>!mp size [size]</h3>Changes the number of open slots</li> 
+                    <li><h3>!mp set [teammode] [scoremode] [size]</h3>Sets lobby properties</li> 
+                    <li><h3>!mp move [username] [slot]</h3>Moves a player to a different slot</li> 
+                    <li><h3>!mp invite [username]</h3>Invites a player to the lobby</li> 
+                    <li><h3>!mp host [username]</h3>Gives a player the host</li> 
+                    <li><h3>!mp clearhost</h3>Clears the host from the lobby </li> 
+                    <li><h3>!mp settings</h3>Prints information about the lobby</li> 
+                    <li><h3>!mp kick [username]</h3>Kicks a player from the lobby</li> 
+                    <li><h3>!mp ban [username]</h3>Bans a player from the lobby</li> 
+                    <li><h3>!mp team [username] [team]</h3>Sets the team of a player</li> 
+                    <li><h3>!mp map [map-id] [gamemode]</h3>Changes the map of the lobby</li> 
+                    <li><h3>!mp mods [mods]</h3>Changes the mods active in the lobby</li> 
+                    <li><h3>!mp timer [seconds]</h3>Sets a timer</li> 
+                    <li><h3>!mp start [seconds]</h3>Starts the game</li> 
+                    <li><h3>!mp abort</h3>Stops the current game from playing</li> 
+                    <li><h3>!mp aborttimer</h3>Stops the current timer</li> 
+                    <li><h3>!mp password [password]</h3>Changes the password of the lobby</li> 
+                    <li><h3>!mp addref [username], , ...</h3>Adds users able to use !mp commands</li> 
+                    <li><h3>!mp removeref [username], , ...</h3>Removes users able to use !mp commands</li> 
+                    <li><h3>!mp listrefs</h3>Lists all referees</li> 
+                    <li><h3>!mp name [room-name]</h3>Changes the name of the lobby</li> 
                 </ul>
                 <br>
                 <section id="Variables">

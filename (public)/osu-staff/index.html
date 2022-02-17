@@ -1,44 +1,44 @@
 <head>
-    <title>CLXXIII's Tourney Wiki</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="markdown.css" />
-    <link rel="icon" href="../osu-staff/static/icon.png" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
-    <script>
-        let path = window.location.pathname,
-        pathName = path.split("/");
-        console.log(pathName)
-        var converter = new showdown.Converter({"tables": true}),
-	    text = fetch("./markdown/hello.md").then((response) => {
-            response.text().then(response => {
-                html = converter.makeHtml(response);
-                
-                let content = document.getElementById("content")
-                content.innerHTML = html
-            })
-        });
-        console.log(converter.getOptions())
-    </script>
+	<title>CLXXIII's Tourney Wiki</title>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="markdown.css" />
+	<link rel="icon" href="../osu-staff/static/icon.png" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+	<script>
+		let path = window.location.pathname,
+			pathName = path.split("/");
+		console.log(pathName);
+		var converter = new showdown.Converter({ tables: true }),
+			text = fetch("/osu-staff/markdown/hello.md").then((response) => {
+				response.text().then((response) => {
+					html = converter.makeHtml(response);
+
+					let content = document.getElementById("content");
+					content.innerHTML = html;
+				});
+			});
+		console.log(converter.getOptions());
+	</script>
 </head>
 <body onload="onLoad()">
-<header>
-    <div class="container">
-    <div class="logo"><a href="../">osu!Staff Docs</a></div>
-    <nav>
-        <ul>
-            <li><a href="../osu-staff/intro">INTRODUCTION</a></li>
-            <li><a href="../osu-staff/referee">REFEREEING</a></li>
-            <li><a href="../osu-staff/streaming">STREAMING</a></li>
-            <li><a href="../osu-staff/mappooling">MAPPOOLING</a></li>
-            <li><a href="../osu-staff/hosting">HOSTING</a></li>
-        </ul>
-    </nav>
-    </div>
-</header>
-<div class="bg"></div>
-<div class="wrapper">
-    <div class="content" id="content">
-        <img class="page-logo" src="static/logo.png"></img>
+	<header>
+		<div class="container">
+			<div class="logo"><a href="../">osu!Staff Docs</a></div>
+			<nav>
+				<ul>
+					<li><a href="../osu-staff/intro">INTRODUCTION</a></li>
+					<li><a href="../osu-staff/referee">REFEREEING</a></li>
+					<li><a href="../osu-staff/streaming">STREAMING</a></li>
+					<li><a href="../osu-staff/mappooling">MAPPOOLING</a></li>
+					<li><a href="../osu-staff/hosting">HOSTING</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="bg"></div>
+	<div class="wrapper">
+		<div class="content" id="content">
+			<!-- <img class="page-logo" src="static/logo.png"></img>
         <section id="Introduction">
             <h2>Introduction</h2>
             <p>
@@ -72,14 +72,13 @@
                     <li>Many others that I am probably forgetting</li>
                 </ul>
             </p>
-        </section>
-
-    </div>
-</div>
-<div class="section-directory-container">
-    <div class="section-directory"><h2>Sections:</h2></div>
-</div>
-<script src="index.js"></script>
-<script src="static/parallax.js"></script>
-<script src="createDirectory.js"></script>
+        </section> -->
+		</div>
+	</div>
+	<div class="section-directory-container">
+		<div class="section-directory"><h2>Sections:</h2></div>
+	</div>
+	<script src="index.js"></script>
+	<script src="static/parallax.js"></script>
+	<script src="createDirectory.js"></script>
 </body>

@@ -1,6 +1,6 @@
 const sectionDirectory =
 	document.getElementsByClassName("section-directory")[0];
-const sections = document.getElementsByTagName("h2");
+const sections = document.getElementsByTagName("h1");
 
 function createDirectory() {
 	for (i = 0; i < sections.length; i++) {

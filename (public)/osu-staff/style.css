@@ -4,6 +4,7 @@
 	--header-color: rgb(4, 31, 37);
 	--content-background: #16262cff;
 	--header-bg-color: rgb(77, 218, 159);
+	--hue: 0deg;
 }
 
 * {
@@ -20,8 +21,18 @@
 	width: 100%;
 	z-index: -1;
 	background-image: url(../osu-staff/static/cut\ triangles.png);
-	filter: sepia(100%) hue-rotate(130deg) brightness(25%) blur(5px);
+	filter: sepia(100%) hue-rotate(calc(var(--hue) + 130deg)) brightness(25%)
+		blur(5px);
 	transform: scale(1.2);
+}
+
+header,
+.wrapper {
+	filter: hue-rotate(var(--hue));
+}
+
+.wrapper img {
+	filter: hue-rotate(calc(var(--hue) * -1));
 }
 
 header {
